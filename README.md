@@ -26,15 +26,16 @@ Telecom companies lose revenue when customers cancel their subscriptions (**chur
 ## Repository Structure
 | File | Description |
 |---|---|
-| `Part1_Data_Preparation_Pipeline.ipynb` | Part 1 notebook: problem framing, EDA, preprocessing, leakage-free pipeline |
+| `Telco_Churn_Project.ipynb` | Main project notebook (Part 1: data preparation · Part 2: Naive Bayes vs decision tree) |
 | `Part1_Project_Proposal.docx` | One-page project proposal |
+| `Part2_Comparison_Writeup.docx` | Part 2 half-page model comparison |
 | `Telco-Customer-Churn.csv` | Raw dataset |
 
 ## Project Progress
 | Part | Topic | Status |
 |---|---|---|
 | Part 1 | Data understanding, preprocessing and leakage-free pipeline | ✅ Done |
-| Part 2 | Naive Bayes vs. decision tree baseline | ⏳ Upcoming |
+| Part 2 | Naive Bayes vs. decision tree baseline | ✅ Done |
 | Part 3 | Ensembles, regularisation and hyperparameter tuning | ⏳ Upcoming |
 | Part 4 | Neural network, clustering, interpretability and fairness | ⏳ Upcoming |
 | Part 5 | Final notebook, report and viva | ⏳ Upcoming |
@@ -47,9 +48,14 @@ Telecom companies lose revenue when customers cancel their subscriptions (**chur
 - Class imbalance is handled with stratified splitting, class weights and imbalance-aware metrics.
 - 5-fold cross-validation sanity check: ROC-AUC ≈ 0.85.
 
+## Part 2 Summary
+- Gaussian Naive Bayes vs. a depth-5 decision tree, both using the Part 1 pipeline, compared with stratified 5-fold CV.
+- Decision tree: ROC-AUC 0.830, F1 0.612. Naive Bayes: ROC-AUC 0.825, F1 0.595 (higher recall, but lower precision).
+- Hand-worked information gain and Gini calculation on 20 sampled customers, checked with code.
+
 ## How to Run
 ```bash
 pip install numpy pandas matplotlib seaborn scikit-learn jupyter
-jupyter notebook Part1_Data_Preparation_Pipeline.ipynb
+jupyter notebook Telco_Churn_Project.ipynb
 ```
 Keep `Telco-Customer-Churn.csv` in the same folder as the notebook. If it is missing, the notebook downloads it automatically.
