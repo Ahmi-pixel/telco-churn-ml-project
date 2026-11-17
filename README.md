@@ -1,6 +1,7 @@
 # Telco Customer Churn Prediction
 
 **CS-13410 Introduction to Machine Learning — Semester Project (Fall 2026)**
+
 The University of Lahore · Department of Computer Science & IT · BSCS
 
 ## Group Members
